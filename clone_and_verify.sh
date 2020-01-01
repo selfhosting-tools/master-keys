@@ -42,7 +42,7 @@ do
     [ \
         "$KEY_FP" \
         == \
-        "$(git verify-commit HEAD 2>&1 | grep "Primary key fingerprint:" | \
+        "$(git verify-commit HEAD 2>&1 | grep '^Primary key fingerprint:' | \
         cut -d: -f 2 | sed s/' '//g)" \
     ] && VALID_SIG="true" && break; \
 done
